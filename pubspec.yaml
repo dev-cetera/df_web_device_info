@@ -12,7 +12,7 @@
 
 name: df_web_device_info
 description: Provides a method for Flutter WASM applications to retrieve basic device information.
-version: 0.1.1
+version: 0.1.2
 repository: https://github.com/robmllze/df_web_device_info
 
 ## -----------------------------------------------------------------------------
