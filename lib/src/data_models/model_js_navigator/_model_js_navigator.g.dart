@@ -172,7 +172,7 @@ class ModelJsNavigator extends _ModelJsNavigator {
     bool includeNulls = false,
   }) {
     try {
-      final userAgent0 = this.userAgent?.trim().nullIfEmpty;
+      final userAgent0 = userAgent?.trim().nullIfEmpty;
       final withNulls = {
         'userAgent': userAgent0,
       };
@@ -188,15 +188,38 @@ class ModelJsNavigator extends _ModelJsNavigator {
   //
 
   @override
-  ModelJsNavigator copyWith(
+  ModelJsNavigator mergeWith(
     BaseModel? other, {
-    bool merge = false,
+    bool deepMerge = false,
   }) {
-    final a = this.toJson();
+    final a = toJson();
     final b = other?.toJson() ?? {};
-    final data0 = merge ? mergeDataDeep(a, b) : {...a, ...b};
-    final data1 = letMapOrNull<String, dynamic>(data0);
-    return ModelJsNavigator.fromJson(data1);
+    final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
+    return ModelJsNavigator.fromJson(data.cast());
+  }
+
+  //
+  //
+  //
+
+  ModelJsNavigator copyWith({
+    String? userAgent,
+  }) {
+    return ModelJsNavigator.c2(
+      userAgent: userAgent ?? this.userAgent,
+    );
+  }
+
+  //
+  //
+  //
+
+  ModelJsNavigator copyWithout({
+    bool userAgent = true,
+  }) {
+    return ModelJsNavigator.c2(
+      userAgent: userAgent ? this.userAgent : null,
+    );
   }
 
   //

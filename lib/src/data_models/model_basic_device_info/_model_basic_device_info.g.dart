@@ -187,9 +187,9 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
     bool includeNulls = false,
   }) {
     try {
-      final operatingSystem0 = this.operatingSystem?.trim().nullIfEmpty;
-      final userAgent0 = this.userAgent?.trim().nullIfEmpty;
-      final isInstalled0 = this.isInstalled;
+      final operatingSystem0 = operatingSystem?.trim().nullIfEmpty;
+      final userAgent0 = userAgent?.trim().nullIfEmpty;
+      final isInstalled0 = isInstalled;
       final withNulls = {
         'userAgent': userAgent0,
         'operatingSystem': operatingSystem0,
@@ -207,15 +207,46 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   //
 
   @override
-  ModelBasicDeviceInfo copyWith(
+  ModelBasicDeviceInfo mergeWith(
     BaseModel? other, {
-    bool merge = false,
+    bool deepMerge = false,
   }) {
-    final a = this.toJson();
+    final a = toJson();
     final b = other?.toJson() ?? {};
-    final data0 = merge ? mergeDataDeep(a, b) : {...a, ...b};
-    final data1 = letMapOrNull<String, dynamic>(data0);
-    return ModelBasicDeviceInfo.fromJson(data1);
+    final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
+    return ModelBasicDeviceInfo.fromJson(data.cast());
+  }
+
+  //
+  //
+  //
+
+  ModelBasicDeviceInfo copyWith({
+    String? operatingSystem,
+    String? userAgent,
+    bool? isInstalled,
+  }) {
+    return ModelBasicDeviceInfo.c2(
+      operatingSystem: operatingSystem ?? this.operatingSystem,
+      userAgent: userAgent ?? this.userAgent,
+      isInstalled: isInstalled ?? this.isInstalled,
+    );
+  }
+
+  //
+  //
+  //
+
+  ModelBasicDeviceInfo copyWithout({
+    bool operatingSystem = true,
+    bool userAgent = true,
+    bool isInstalled = true,
+  }) {
+    return ModelBasicDeviceInfo.c2(
+      operatingSystem: operatingSystem ? this.operatingSystem : null,
+      userAgent: userAgent ? this.userAgent : null,
+      isInstalled: isInstalled ? this.isInstalled : null,
+    );
   }
 
   //

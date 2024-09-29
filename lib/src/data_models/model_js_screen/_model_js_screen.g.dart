@@ -215,13 +215,13 @@ class ModelJsScreen extends _ModelJsScreen {
     bool includeNulls = false,
   }) {
     try {
-      final availHeight0 = this.availHeight;
-      final availWidth0 = this.availWidth;
-      final width0 = this.width;
-      final height0 = this.height;
-      final orientation0 = this.orientation?.trim().nullIfEmpty;
-      final colorDepth0 = this.colorDepth;
-      final pixelDepth0 = this.pixelDepth;
+      final availHeight0 = availHeight;
+      final availWidth0 = availWidth;
+      final width0 = width;
+      final height0 = height;
+      final orientation0 = orientation?.trim().nullIfEmpty;
+      final colorDepth0 = colorDepth;
+      final pixelDepth0 = pixelDepth;
       final withNulls = {
         'width': width0,
         'pixelDepth': pixelDepth0,
@@ -243,15 +243,62 @@ class ModelJsScreen extends _ModelJsScreen {
   //
 
   @override
-  ModelJsScreen copyWith(
+  ModelJsScreen mergeWith(
     BaseModel? other, {
-    bool merge = false,
+    bool deepMerge = false,
   }) {
-    final a = this.toJson();
+    final a = toJson();
     final b = other?.toJson() ?? {};
-    final data0 = merge ? mergeDataDeep(a, b) : {...a, ...b};
-    final data1 = letMapOrNull<String, dynamic>(data0);
-    return ModelJsScreen.fromJson(data1);
+    final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
+    return ModelJsScreen.fromJson(data.cast());
+  }
+
+  //
+  //
+  //
+
+  ModelJsScreen copyWith({
+    int? availHeight,
+    int? availWidth,
+    int? width,
+    int? height,
+    String? orientation,
+    int? colorDepth,
+    int? pixelDepth,
+  }) {
+    return ModelJsScreen.c2(
+      availHeight: availHeight ?? this.availHeight,
+      availWidth: availWidth ?? this.availWidth,
+      width: width ?? this.width,
+      height: height ?? this.height,
+      orientation: orientation ?? this.orientation,
+      colorDepth: colorDepth ?? this.colorDepth,
+      pixelDepth: pixelDepth ?? this.pixelDepth,
+    );
+  }
+
+  //
+  //
+  //
+
+  ModelJsScreen copyWithout({
+    bool availHeight = true,
+    bool availWidth = true,
+    bool width = true,
+    bool height = true,
+    bool orientation = true,
+    bool colorDepth = true,
+    bool pixelDepth = true,
+  }) {
+    return ModelJsScreen.c2(
+      availHeight: availHeight ? this.availHeight : null,
+      availWidth: availWidth ? this.availWidth : null,
+      width: width ? this.width : null,
+      height: height ? this.height : null,
+      orientation: orientation ? this.orientation : null,
+      colorDepth: colorDepth ? this.colorDepth : null,
+      pixelDepth: pixelDepth ? this.pixelDepth : null,
+    );
   }
 
   //
