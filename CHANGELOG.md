@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.1]
+
+- Released @ 10/2024 (UTC)
+- refactor: Clean some code
+
 ## [0.3.0]
 
 - Released @ 10/2024 (UTC)
