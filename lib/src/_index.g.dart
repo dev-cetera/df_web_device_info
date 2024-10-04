@@ -19,7 +19,6 @@ export 'get_basic_device_info/get_basic_device_info.dart';
 // export 'get_basic_device_info/_get_basic_device_info_non_web.dart';
 // export '_js/_is_pwa_installed.dart';
 // export '_js/_get_screen_as_json.dart';
-// export '_js/_get_global_position_as_json.dart';
 // export '_js/_get_navigator_as_json.dart';
 
 // --- GENERATED FILES (EXCLUDED) ---
