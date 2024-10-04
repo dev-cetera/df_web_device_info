@@ -11,7 +11,7 @@ Dart & Flutter Packages by DevCetra.com & contributors.
 
 ## Summary
 
-Coming soon.
+A package that provides a method for Flutter WASM applications to retrieve basic device information.
 
 For a full feature set, please refer to the [API reference](https://pub.dev/documentation/df_web_device_info/).
 
