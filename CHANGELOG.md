@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.2]
+
+- Released @ 10/2024 (UTC)
+- chore: Update models and print statements
+
 ## [0.3.1]
 
 - Released @ 10/2024 (UTC)
