@@ -21,9 +21,21 @@ typedef BasicDeviceInfo = ModelBasicDeviceInfo;
 @GenerateDartModel(
   shouldInherit: true,
   fields: {
-    ('operating_system?', String),
-    ('user_agent?', String),
-    ('is_installed?', bool),
+    Field(
+      fieldPath: ['operatingSystem'],
+      fieldType: String,
+      nullable: true,
+    ),
+    Field(
+      fieldPath: ['userAgent'],
+      fieldType: String,
+      nullable: true,
+    ),
+    Field(
+      fieldPath: ['isInstalled'],
+      fieldType: bool,
+      nullable: true,
+    ),
   },
 )
 abstract class _ModelBasicDeviceInfo extends Model {
