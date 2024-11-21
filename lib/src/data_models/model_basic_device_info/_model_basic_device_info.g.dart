@@ -2,7 +2,7 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
 // GENERATED - DO NOT MODIFY BY HAND
-// See: https://github.com/robmllze/df_generate_dart_models
+// See: https://github.com/DevCetra/df_generate_dart_models
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
@@ -235,7 +235,7 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   }
 
   @override
-  ModelBasicDeviceInfo mergeWith(
+  BaseModel mergeWith(
     BaseModel? other, {
     bool deepMerge = false,
   }) {
@@ -246,7 +246,7 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   }
 
   /// Creates a copy of this instance, replacing the specified fields.
-  ModelBasicDeviceInfo copyWith({
+  ModelBasicDeviceInfo copyWithModelBasicDeviceInfoProperties({
     String? operatingSystem,
     String? userAgent,
     bool? isInstalled,
@@ -259,7 +259,7 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   }
 
   /// Creates a copy of this instance, removing the specified fields.
-  ModelBasicDeviceInfo copyWithout({
+  ModelBasicDeviceInfo copyWithoutModelBasicDeviceInfoProperties({
     bool operatingSystem = true,
     bool userAgent = true,
     bool isInstalled = true,

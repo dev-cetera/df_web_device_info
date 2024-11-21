@@ -2,7 +2,7 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
 // GENERATED - DO NOT MODIFY BY HAND
-// See: https://github.com/robmllze/df_generate_dart_models
+// See: https://github.com/DevCetra/df_generate_dart_models
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
@@ -212,7 +212,7 @@ class ModelJsNavigator extends _ModelJsNavigator {
   }
 
   @override
-  ModelJsNavigator mergeWith(
+  BaseModel mergeWith(
     BaseModel? other, {
     bool deepMerge = false,
   }) {
@@ -223,7 +223,7 @@ class ModelJsNavigator extends _ModelJsNavigator {
   }
 
   /// Creates a copy of this instance, replacing the specified fields.
-  ModelJsNavigator copyWith({
+  ModelJsNavigator copyWithModelJsNavigatorProperties({
     String? userAgent,
   }) {
     return ModelJsNavigator.assertRequired(
@@ -232,7 +232,7 @@ class ModelJsNavigator extends _ModelJsNavigator {
   }
 
   /// Creates a copy of this instance, removing the specified fields.
-  ModelJsNavigator copyWithout({
+  ModelJsNavigator copyWithoutModelJsNavigatorProperties({
     bool userAgent = true,
   }) {
     return ModelJsNavigator.assertRequired(

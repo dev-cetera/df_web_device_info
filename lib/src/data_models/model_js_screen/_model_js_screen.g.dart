@@ -2,7 +2,7 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
 // GENERATED - DO NOT MODIFY BY HAND
-// See: https://github.com/robmllze/df_generate_dart_models
+// See: https://github.com/DevCetra/df_generate_dart_models
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
@@ -278,7 +278,7 @@ class ModelJsScreen extends _ModelJsScreen {
   }
 
   @override
-  ModelJsScreen mergeWith(
+  BaseModel mergeWith(
     BaseModel? other, {
     bool deepMerge = false,
   }) {
@@ -289,7 +289,7 @@ class ModelJsScreen extends _ModelJsScreen {
   }
 
   /// Creates a copy of this instance, replacing the specified fields.
-  ModelJsScreen copyWith({
+  ModelJsScreen copyWithModelJsScreenProperties({
     int? availHeight,
     int? availWidth,
     int? width,
@@ -310,7 +310,7 @@ class ModelJsScreen extends _ModelJsScreen {
   }
 
   /// Creates a copy of this instance, removing the specified fields.
-  ModelJsScreen copyWithout({
+  ModelJsScreen copyWithoutModelJsScreenProperties({
     bool availHeight = true,
     bool availWidth = true,
     bool width = true,
