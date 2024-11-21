@@ -278,18 +278,19 @@ class ModelJsScreen extends _ModelJsScreen {
   }
 
   @override
-  BaseModel mergeWith(
+  T mergeWith<T extends BaseModel>(
     BaseModel? other, {
     bool deepMerge = false,
   }) {
     final a = toJson();
     final b = other?.toJson() ?? {};
     final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
-    return ModelJsScreen.fromJson(data.cast());
+    return ModelJsScreen.fromJson(data.cast()) as T;
   }
 
   /// Creates a copy of this instance, replacing the specified fields.
-  ModelJsScreen copyWithModelJsScreenProperties({
+  static ModelJsScreen copyWith(
+    ModelJsScreen src, {
     int? availHeight,
     int? availWidth,
     int? width,
@@ -299,18 +300,19 @@ class ModelJsScreen extends _ModelJsScreen {
     int? pixelDepth,
   }) {
     return ModelJsScreen.assertRequired(
-      availHeight: availHeight ?? this.availHeight,
-      availWidth: availWidth ?? this.availWidth,
-      width: width ?? this.width,
-      height: height ?? this.height,
-      orientation: orientation ?? this.orientation,
-      colorDepth: colorDepth ?? this.colorDepth,
-      pixelDepth: pixelDepth ?? this.pixelDepth,
+      availHeight: availHeight ?? src.availHeight,
+      availWidth: availWidth ?? src.availWidth,
+      width: width ?? src.width,
+      height: height ?? src.height,
+      orientation: orientation ?? src.orientation,
+      colorDepth: colorDepth ?? src.colorDepth,
+      pixelDepth: pixelDepth ?? src.pixelDepth,
     );
   }
 
   /// Creates a copy of this instance, removing the specified fields.
-  ModelJsScreen copyWithoutModelJsScreenProperties({
+  static ModelJsScreen copyWithout(
+    ModelJsScreen src, {
     bool availHeight = true,
     bool availWidth = true,
     bool width = true,
@@ -320,13 +322,13 @@ class ModelJsScreen extends _ModelJsScreen {
     bool pixelDepth = true,
   }) {
     return ModelJsScreen.assertRequired(
-      availHeight: availHeight ? this.availHeight : null,
-      availWidth: availWidth ? this.availWidth : null,
-      width: width ? this.width : null,
-      height: height ? this.height : null,
-      orientation: orientation ? this.orientation : null,
-      colorDepth: colorDepth ? this.colorDepth : null,
-      pixelDepth: pixelDepth ? this.pixelDepth : null,
+      availHeight: availHeight ? src.availHeight : null,
+      availWidth: availWidth ? src.availWidth : null,
+      width: width ? src.width : null,
+      height: height ? src.height : null,
+      orientation: orientation ? src.orientation : null,
+      colorDepth: colorDepth ? src.colorDepth : null,
+      pixelDepth: pixelDepth ? src.pixelDepth : null,
     );
   }
 

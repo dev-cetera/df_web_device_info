@@ -212,31 +212,33 @@ class ModelJsNavigator extends _ModelJsNavigator {
   }
 
   @override
-  BaseModel mergeWith(
+  T mergeWith<T extends BaseModel>(
     BaseModel? other, {
     bool deepMerge = false,
   }) {
     final a = toJson();
     final b = other?.toJson() ?? {};
     final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
-    return ModelJsNavigator.fromJson(data.cast());
+    return ModelJsNavigator.fromJson(data.cast()) as T;
   }
 
   /// Creates a copy of this instance, replacing the specified fields.
-  ModelJsNavigator copyWithModelJsNavigatorProperties({
+  static ModelJsNavigator copyWith(
+    ModelJsNavigator src, {
     String? userAgent,
   }) {
     return ModelJsNavigator.assertRequired(
-      userAgent: userAgent ?? this.userAgent,
+      userAgent: userAgent ?? src.userAgent,
     );
   }
 
   /// Creates a copy of this instance, removing the specified fields.
-  ModelJsNavigator copyWithoutModelJsNavigatorProperties({
+  static ModelJsNavigator copyWithout(
+    ModelJsNavigator src, {
     bool userAgent = true,
   }) {
     return ModelJsNavigator.assertRequired(
-      userAgent: userAgent ? this.userAgent : null,
+      userAgent: userAgent ? src.userAgent : null,
     );
   }
 

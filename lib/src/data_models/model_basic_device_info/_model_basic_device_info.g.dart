@@ -235,39 +235,41 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   }
 
   @override
-  BaseModel mergeWith(
+  T mergeWith<T extends BaseModel>(
     BaseModel? other, {
     bool deepMerge = false,
   }) {
     final a = toJson();
     final b = other?.toJson() ?? {};
     final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
-    return ModelBasicDeviceInfo.fromJson(data.cast());
+    return ModelBasicDeviceInfo.fromJson(data.cast()) as T;
   }
 
   /// Creates a copy of this instance, replacing the specified fields.
-  ModelBasicDeviceInfo copyWithModelBasicDeviceInfoProperties({
+  static ModelBasicDeviceInfo copyWith(
+    ModelBasicDeviceInfo src, {
     String? operatingSystem,
     String? userAgent,
     bool? isInstalled,
   }) {
     return ModelBasicDeviceInfo.assertRequired(
-      operatingSystem: operatingSystem ?? this.operatingSystem,
-      userAgent: userAgent ?? this.userAgent,
-      isInstalled: isInstalled ?? this.isInstalled,
+      operatingSystem: operatingSystem ?? src.operatingSystem,
+      userAgent: userAgent ?? src.userAgent,
+      isInstalled: isInstalled ?? src.isInstalled,
     );
   }
 
   /// Creates a copy of this instance, removing the specified fields.
-  ModelBasicDeviceInfo copyWithoutModelBasicDeviceInfoProperties({
+  static ModelBasicDeviceInfo copyWithout(
+    ModelBasicDeviceInfo src, {
     bool operatingSystem = true,
     bool userAgent = true,
     bool isInstalled = true,
   }) {
     return ModelBasicDeviceInfo.assertRequired(
-      operatingSystem: operatingSystem ? this.operatingSystem : null,
-      userAgent: userAgent ? this.userAgent : null,
-      isInstalled: isInstalled ? this.isInstalled : null,
+      operatingSystem: operatingSystem ? src.operatingSystem : null,
+      userAgent: userAgent ? src.userAgent : null,
+      isInstalled: isInstalled ? src.isInstalled : null,
     );
   }
 
