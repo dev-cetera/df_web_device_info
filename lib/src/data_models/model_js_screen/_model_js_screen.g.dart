@@ -2,12 +2,13 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
 // GENERATED - DO NOT MODIFY BY HAND
-// See: https://github.com/DevCetra/df_generate_dart_models
+// See: https://github.com/dev-cetera/df_generate_dart_models
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
 // ignore_for_file: annotate_overrides
+// ignore_for_file: argument_type_not_assignable
 // ignore_for_file: invalid_null_aware_operator
 // ignore_for_file: overridden_fields
 // ignore_for_file: require_trailing_commas
@@ -277,61 +278,6 @@ class ModelJsScreen extends _ModelJsScreen {
     }
   }
 
-  @override
-  T mergeWith<T extends BaseModel>(
-    BaseModel? other, {
-    bool deepMerge = false,
-  }) {
-    final a = toJson();
-    final b = other?.toJson() ?? {};
-    final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
-    return ModelJsScreen.fromJson(data.cast()) as T;
-  }
-
-  /// Creates a copy of this instance, replacing the specified fields.
-  static ModelJsScreen copyWith(
-    ModelJsScreen src, {
-    int? availHeight,
-    int? availWidth,
-    int? width,
-    int? height,
-    String? orientation,
-    int? colorDepth,
-    int? pixelDepth,
-  }) {
-    return ModelJsScreen.assertRequired(
-      availHeight: availHeight ?? src.availHeight,
-      availWidth: availWidth ?? src.availWidth,
-      width: width ?? src.width,
-      height: height ?? src.height,
-      orientation: orientation ?? src.orientation,
-      colorDepth: colorDepth ?? src.colorDepth,
-      pixelDepth: pixelDepth ?? src.pixelDepth,
-    );
-  }
-
-  /// Creates a copy of this instance, removing the specified fields.
-  static ModelJsScreen copyWithout(
-    ModelJsScreen src, {
-    bool availHeight = true,
-    bool availWidth = true,
-    bool width = true,
-    bool height = true,
-    bool orientation = true,
-    bool colorDepth = true,
-    bool pixelDepth = true,
-  }) {
-    return ModelJsScreen.assertRequired(
-      availHeight: availHeight ? src.availHeight : null,
-      availWidth: availWidth ? src.availWidth : null,
-      width: width ? src.width : null,
-      height: height ? src.height : null,
-      orientation: orientation ? src.orientation : null,
-      colorDepth: colorDepth ? src.colorDepth : null,
-      pixelDepth: pixelDepth ? src.pixelDepth : null,
-    );
-  }
-
   /// Returns the value of the [availHeight] field.
   /// If the field is nullable, the return value may be null; otherwise, it
   /// will always return a non-null value.
@@ -398,4 +344,60 @@ abstract final class ModelJsScreenFieldNames {
 
   /// The field name of [ModelJsScreen.pixelDepth].
   static const pixelDepth = 'pixelDepth';
+}
+
+extension ModelJsScreenX on ModelJsScreen {
+  /// Creates a copy of this instance, merging another model's fields into
+  /// this model's fields.
+  ModelJsScreen mergeWith(
+    BaseModel? other, {
+    bool deepMerge = false,
+  }) {
+    final a = toJson();
+    final b = other?.toJson() ?? {};
+    final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
+    return ModelJsScreen.fromJson(data.cast());
+  }
+
+  /// Creates a copy of this instance, replacing the specified fields.
+  ModelJsScreen copyWith({
+    int? availHeight,
+    int? availWidth,
+    int? width,
+    int? height,
+    String? orientation,
+    int? colorDepth,
+    int? pixelDepth,
+  }) {
+    return ModelJsScreen.assertRequired(
+      availHeight: availHeight ?? this.availHeight,
+      availWidth: availWidth ?? this.availWidth,
+      width: width ?? this.width,
+      height: height ?? this.height,
+      orientation: orientation ?? this.orientation,
+      colorDepth: colorDepth ?? this.colorDepth,
+      pixelDepth: pixelDepth ?? this.pixelDepth,
+    );
+  }
+
+  /// Creates a copy of this instance, removing the specified fields.
+  ModelJsScreen copyWithout({
+    bool availHeight = true,
+    bool availWidth = true,
+    bool width = true,
+    bool height = true,
+    bool orientation = true,
+    bool colorDepth = true,
+    bool pixelDepth = true,
+  }) {
+    return ModelJsScreen.assertRequired(
+      availHeight: availHeight ? this.availHeight : null,
+      availWidth: availWidth ? this.availWidth : null,
+      width: width ? this.width : null,
+      height: height ? this.height : null,
+      orientation: orientation ? this.orientation : null,
+      colorDepth: colorDepth ? this.colorDepth : null,
+      pixelDepth: pixelDepth ? this.pixelDepth : null,
+    );
+  }
 }

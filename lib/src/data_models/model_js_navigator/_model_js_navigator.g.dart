@@ -2,12 +2,13 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
 // GENERATED - DO NOT MODIFY BY HAND
-// See: https://github.com/DevCetra/df_generate_dart_models
+// See: https://github.com/dev-cetera/df_generate_dart_models
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
 // ignore_for_file: annotate_overrides
+// ignore_for_file: argument_type_not_assignable
 // ignore_for_file: invalid_null_aware_operator
 // ignore_for_file: overridden_fields
 // ignore_for_file: require_trailing_commas
@@ -211,37 +212,6 @@ class ModelJsNavigator extends _ModelJsNavigator {
     }
   }
 
-  @override
-  T mergeWith<T extends BaseModel>(
-    BaseModel? other, {
-    bool deepMerge = false,
-  }) {
-    final a = toJson();
-    final b = other?.toJson() ?? {};
-    final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
-    return ModelJsNavigator.fromJson(data.cast()) as T;
-  }
-
-  /// Creates a copy of this instance, replacing the specified fields.
-  static ModelJsNavigator copyWith(
-    ModelJsNavigator src, {
-    String? userAgent,
-  }) {
-    return ModelJsNavigator.assertRequired(
-      userAgent: userAgent ?? src.userAgent,
-    );
-  }
-
-  /// Creates a copy of this instance, removing the specified fields.
-  static ModelJsNavigator copyWithout(
-    ModelJsNavigator src, {
-    bool userAgent = true,
-  }) {
-    return ModelJsNavigator.assertRequired(
-      userAgent: userAgent ? src.userAgent : null,
-    );
-  }
-
   /// Returns the value of the [userAgent] field.
   /// If the field is nullable, the return value may be null; otherwise, it
   /// will always return a non-null value.
@@ -254,4 +224,36 @@ class ModelJsNavigator extends _ModelJsNavigator {
 abstract final class ModelJsNavigatorFieldNames {
   /// The field name of [ModelJsNavigator.userAgent].
   static const userAgent = 'userAgent';
+}
+
+extension ModelJsNavigatorX on ModelJsNavigator {
+  /// Creates a copy of this instance, merging another model's fields into
+  /// this model's fields.
+  ModelJsNavigator mergeWith(
+    BaseModel? other, {
+    bool deepMerge = false,
+  }) {
+    final a = toJson();
+    final b = other?.toJson() ?? {};
+    final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
+    return ModelJsNavigator.fromJson(data.cast());
+  }
+
+  /// Creates a copy of this instance, replacing the specified fields.
+  ModelJsNavigator copyWith({
+    String? userAgent,
+  }) {
+    return ModelJsNavigator.assertRequired(
+      userAgent: userAgent ?? this.userAgent,
+    );
+  }
+
+  /// Creates a copy of this instance, removing the specified fields.
+  ModelJsNavigator copyWithout({
+    bool userAgent = true,
+  }) {
+    return ModelJsNavigator.assertRequired(
+      userAgent: userAgent ? this.userAgent : null,
+    );
+  }
 }

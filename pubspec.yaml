@@ -1,7 +1,7 @@
 ##.title
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##
-## Dart/Flutter (DF) Packages by DevCetra.com & contributors. The use of this
+## Dart/Flutter (DF) Packages by dev-cetera.com & contributors. The use of this
 ## source code is governed by an MIT-style license described in the LICENSE
 ## file located in this project's root directory.
 ##
@@ -12,10 +12,10 @@
 
 name: df_web_device_info
 description: A package that provides a method for Flutter WASM applications to retrieve basic device information.
-version: 0.3.10
-repository: https://github.com/DevCetra/df_web_device_info
+version: 0.3.11
+repository: https://github.com/dev-cetera/df_web_device_info
 funding:
-  - https://www.buymeacoffee.com/robmllze
+  - https://www.buymeacoffee.com/dev_cetera
 topics:
   - device-info
   - javascript
@@ -31,7 +31,7 @@ environment:
 ## -----------------------------------------------------------------------------
 
 dependencies:
-  df_generate_dart_models_core: ^0.8.0
+  df_generate_dart_models_core: ^0.9.8
 
 ## -----------------------------------------------------------------------------
 
