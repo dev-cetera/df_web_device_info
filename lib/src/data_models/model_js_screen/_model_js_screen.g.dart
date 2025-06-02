@@ -101,9 +101,7 @@ class ModelJsScreen extends _ModelJsScreen {
 
   /// Constructs a new instance of [ModelJsScreen],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelJsScreen.from(
-    BaseModel another,
-  ) {
+  factory ModelJsScreen.from(BaseModel another) {
     try {
       return fromOrNull(another)!;
     } catch (e) {
@@ -116,17 +114,13 @@ class ModelJsScreen extends _ModelJsScreen {
   /// from the fields of [another] instance. Returns `null` if [another] is
   /// `null` or if the conversion fails.
   @pragma('vm:prefer-inline')
-  static ModelJsScreen? fromOrNull(
-    BaseModel? another,
-  ) {
+  static ModelJsScreen? fromOrNull(BaseModel? another) {
     return fromJsonOrNull(another?.toJson())!;
   }
 
   /// Constructs a new instance of [ModelJsScreen],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelJsScreen.of(
-    ModelJsScreen another,
-  ) {
+  factory ModelJsScreen.of(ModelJsScreen another) {
     try {
       return ofOrNull(another)!;
     } catch (e) {
@@ -139,18 +133,14 @@ class ModelJsScreen extends _ModelJsScreen {
   /// from the fields of [another] instance. Returns `null` if [another] is
   /// `null` or if the conversion fails.
   @pragma('vm:prefer-inline')
-  static ModelJsScreen? ofOrNull(
-    ModelJsScreen? other,
-  ) {
+  static ModelJsScreen? ofOrNull(ModelJsScreen? other) {
     return fromJsonOrNull(other?.toJson());
   }
 
   /// Constructs a new instance of [ModelJsScreen],
   /// from [jsonString], which must be a valid JSON String. Throws if the
   /// conversion fails.
-  factory ModelJsScreen.fromJsonString(
-    String jsonString,
-  ) {
+  factory ModelJsScreen.fromJsonString(String jsonString) {
     try {
       return fromJsonStringOrNull(jsonString)!;
     } catch (e) {
@@ -162,9 +152,7 @@ class ModelJsScreen extends _ModelJsScreen {
   /// Constructs a new instance of [ModelJsScreen],
   /// from [jsonString], which must be a valid JSON String. Returns `null` if
   /// [jsonString] is `null` or if the conversion fails.
-  static ModelJsScreen? fromJsonStringOrNull(
-    String? jsonString,
-  ) {
+  static ModelJsScreen? fromJsonStringOrNull(String? jsonString) {
     try {
       if (jsonString!.isNotEmpty) {
         final decoded = letMapOrNull<String, dynamic>(jsonDecode(jsonString));
@@ -180,9 +168,7 @@ class ModelJsScreen extends _ModelJsScreen {
   /// Constructs a new instance of [ModelJsScreen],
   /// from [json], which must be a valid JSON object. Throws if the conversion
   /// fails.
-  factory ModelJsScreen.fromJson(
-    Map<String, dynamic>? json,
-  ) {
+  factory ModelJsScreen.fromJson(Map<String, dynamic>? json) {
     try {
       return fromJsonOrNull(json)!;
     } catch (e) {
@@ -194,9 +180,7 @@ class ModelJsScreen extends _ModelJsScreen {
   /// Constructs a new instance of [ModelJsScreen],
   /// from [json], which must be a valid JSON object. Returns `null` if
   /// [json] is `null` or if the conversion fails.
-  static ModelJsScreen? fromJsonOrNull(
-    Map<String, dynamic>? json,
-  ) {
+  static ModelJsScreen? fromJsonOrNull(Map<String, dynamic>? json) {
     try {
       final availHeight = letAsOrNull<int>(json?['availHeight']);
       final availWidth = letAsOrNull<int>(json?['availWidth']);
@@ -222,9 +206,7 @@ class ModelJsScreen extends _ModelJsScreen {
   /// Constructs a new instance of [ModelJsScreen],
   /// from the query parameters of [uri]. Throws if the conversion
   /// fails.
-  factory ModelJsScreen.fromUri(
-    Uri? uri,
-  ) {
+  factory ModelJsScreen.fromUri(Uri? uri) {
     try {
       return fromUriOrNull(uri)!;
     } catch (e) {
@@ -236,9 +218,7 @@ class ModelJsScreen extends _ModelJsScreen {
   /// Constructs a new instance of [ModelJsScreen],
   /// from the query parameters of [uri]. Returns `null` if [uri] is `null` or
   /// if the conversion fails.
-  static ModelJsScreen? fromUriOrNull(
-    Uri? uri,
-  ) {
+  static ModelJsScreen? fromUriOrNull(Uri? uri) {
     try {
       if (uri != null && uri.path == CLASS_NAME) {
         return ModelJsScreen.fromJson(uri.queryParameters);
@@ -251,9 +231,7 @@ class ModelJsScreen extends _ModelJsScreen {
   }
 
   @override
-  Map<String, dynamic> toJson({
-    bool includeNulls = false,
-  }) {
+  Map<String, dynamic> toJson({bool includeNulls = false}) {
     try {
       final availHeight0 = availHeight;
       final availWidth0 = availWidth;
@@ -349,10 +327,7 @@ abstract final class ModelJsScreenFieldNames {
 extension ModelJsScreenX on ModelJsScreen {
   /// Creates a copy of this instance, merging another model's fields into
   /// this model's fields.
-  ModelJsScreen mergeWith(
-    BaseModel? other, {
-    bool deepMerge = false,
-  }) {
+  ModelJsScreen mergeWith(BaseModel? other, {bool deepMerge = false}) {
     final a = toJson();
     final b = other?.toJson() ?? {};
     final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;

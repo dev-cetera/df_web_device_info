@@ -21,11 +21,7 @@ typedef JsNavigator = ModelJsNavigator;
 @GenerateDartModel(
   shouldInherit: true,
   fields: {
-    Field(
-      fieldPath: ['userAgent'],
-      fieldType: String,
-      nullable: true,
-    ),
+    Field(fieldPath: ['userAgent'], fieldType: String, nullable: true),
   },
 )
 abstract class _ModelJsNavigator extends Model {

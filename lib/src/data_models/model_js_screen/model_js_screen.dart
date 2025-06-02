@@ -21,41 +21,13 @@ typedef JsScreen = ModelJsScreen;
 @GenerateDartModel(
   shouldInherit: true,
   fields: {
-    Field(
-      fieldPath: ['availHeight'],
-      fieldType: int,
-      nullable: true,
-    ),
-    Field(
-      fieldPath: ['availWidth'],
-      fieldType: int,
-      nullable: true,
-    ),
-    Field(
-      fieldPath: ['width'],
-      fieldType: int,
-      nullable: true,
-    ),
-    Field(
-      fieldPath: ['height'],
-      fieldType: int,
-      nullable: true,
-    ),
-    Field(
-      fieldPath: ['orientation'],
-      fieldType: String,
-      nullable: true,
-    ),
-    Field(
-      fieldPath: ['colorDepth'],
-      fieldType: int,
-      nullable: true,
-    ),
-    Field(
-      fieldPath: ['pixelDepth'],
-      fieldType: int,
-      nullable: true,
-    ),
+    Field(fieldPath: ['availHeight'], fieldType: int, nullable: true),
+    Field(fieldPath: ['availWidth'], fieldType: int, nullable: true),
+    Field(fieldPath: ['width'], fieldType: int, nullable: true),
+    Field(fieldPath: ['height'], fieldType: int, nullable: true),
+    Field(fieldPath: ['orientation'], fieldType: String, nullable: true),
+    Field(fieldPath: ['colorDepth'], fieldType: int, nullable: true),
+    Field(fieldPath: ['pixelDepth'], fieldType: int, nullable: true),
   },
 )
 abstract class _ModelJsScreen extends Model {
