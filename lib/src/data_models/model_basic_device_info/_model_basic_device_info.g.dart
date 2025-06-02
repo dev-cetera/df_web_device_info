@@ -73,7 +73,9 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
 
   /// Constructs a new instance of [ModelBasicDeviceInfo],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelBasicDeviceInfo.from(BaseModel another) {
+  factory ModelBasicDeviceInfo.from(
+    BaseModel another,
+  ) {
     try {
       return fromOrNull(another)!;
     } catch (e) {
@@ -86,13 +88,17 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   /// from the fields of [another] instance. Returns `null` if [another] is
   /// `null` or if the conversion fails.
   @pragma('vm:prefer-inline')
-  static ModelBasicDeviceInfo? fromOrNull(BaseModel? another) {
+  static ModelBasicDeviceInfo? fromOrNull(
+    BaseModel? another,
+  ) {
     return fromJsonOrNull(another?.toJson())!;
   }
 
   /// Constructs a new instance of [ModelBasicDeviceInfo],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelBasicDeviceInfo.of(ModelBasicDeviceInfo another) {
+  factory ModelBasicDeviceInfo.of(
+    ModelBasicDeviceInfo another,
+  ) {
     try {
       return ofOrNull(another)!;
     } catch (e) {
@@ -105,14 +111,18 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   /// from the fields of [another] instance. Returns `null` if [another] is
   /// `null` or if the conversion fails.
   @pragma('vm:prefer-inline')
-  static ModelBasicDeviceInfo? ofOrNull(ModelBasicDeviceInfo? other) {
+  static ModelBasicDeviceInfo? ofOrNull(
+    ModelBasicDeviceInfo? other,
+  ) {
     return fromJsonOrNull(other?.toJson());
   }
 
   /// Constructs a new instance of [ModelBasicDeviceInfo],
   /// from [jsonString], which must be a valid JSON String. Throws if the
   /// conversion fails.
-  factory ModelBasicDeviceInfo.fromJsonString(String jsonString) {
+  factory ModelBasicDeviceInfo.fromJsonString(
+    String jsonString,
+  ) {
     try {
       return fromJsonStringOrNull(jsonString)!;
     } catch (e) {
@@ -124,7 +134,9 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   /// Constructs a new instance of [ModelBasicDeviceInfo],
   /// from [jsonString], which must be a valid JSON String. Returns `null` if
   /// [jsonString] is `null` or if the conversion fails.
-  static ModelBasicDeviceInfo? fromJsonStringOrNull(String? jsonString) {
+  static ModelBasicDeviceInfo? fromJsonStringOrNull(
+    String? jsonString,
+  ) {
     try {
       if (jsonString!.isNotEmpty) {
         final decoded = letMapOrNull<String, dynamic>(jsonDecode(jsonString));
@@ -140,7 +152,9 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   /// Constructs a new instance of [ModelBasicDeviceInfo],
   /// from [json], which must be a valid JSON object. Throws if the conversion
   /// fails.
-  factory ModelBasicDeviceInfo.fromJson(Map<String, dynamic>? json) {
+  factory ModelBasicDeviceInfo.fromJson(
+    Map<String, dynamic>? json,
+  ) {
     try {
       return fromJsonOrNull(json)!;
     } catch (e) {
@@ -152,12 +166,12 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   /// Constructs a new instance of [ModelBasicDeviceInfo],
   /// from [json], which must be a valid JSON object. Returns `null` if
   /// [json] is `null` or if the conversion fails.
-  static ModelBasicDeviceInfo? fromJsonOrNull(Map<String, dynamic>? json) {
+  static ModelBasicDeviceInfo? fromJsonOrNull(
+    Map<String, dynamic>? json,
+  ) {
     try {
-      final operatingSystem = json?['operatingSystem']
-          ?.toString()
-          .trim()
-          .nullIfEmpty;
+      final operatingSystem =
+          json?['operatingSystem']?.toString().trim().nullIfEmpty;
       final userAgent = json?['userAgent']?.toString().trim().nullIfEmpty;
       final isInstalled = letAsOrNull<bool>(json?['isInstalled']);
       return ModelBasicDeviceInfo(
@@ -173,7 +187,9 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   /// Constructs a new instance of [ModelBasicDeviceInfo],
   /// from the query parameters of [uri]. Throws if the conversion
   /// fails.
-  factory ModelBasicDeviceInfo.fromUri(Uri? uri) {
+  factory ModelBasicDeviceInfo.fromUri(
+    Uri? uri,
+  ) {
     try {
       return fromUriOrNull(uri)!;
     } catch (e) {
@@ -185,7 +201,9 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   /// Constructs a new instance of [ModelBasicDeviceInfo],
   /// from the query parameters of [uri]. Returns `null` if [uri] is `null` or
   /// if the conversion fails.
-  static ModelBasicDeviceInfo? fromUriOrNull(Uri? uri) {
+  static ModelBasicDeviceInfo? fromUriOrNull(
+    Uri? uri,
+  ) {
     try {
       if (uri != null && uri.path == CLASS_NAME) {
         return ModelBasicDeviceInfo.fromJson(uri.queryParameters);
@@ -198,7 +216,9 @@ class ModelBasicDeviceInfo extends _ModelBasicDeviceInfo {
   }
 
   @override
-  Map<String, dynamic> toJson({bool includeNulls = false}) {
+  Map<String, dynamic> toJson({
+    bool includeNulls = false,
+  }) {
     try {
       final operatingSystem0 = operatingSystem?.trim().nullIfEmpty;
       final userAgent0 = userAgent?.trim().nullIfEmpty;
@@ -250,7 +270,10 @@ abstract final class ModelBasicDeviceInfoFieldNames {
 extension ModelBasicDeviceInfoX on ModelBasicDeviceInfo {
   /// Creates a copy of this instance, merging another model's fields into
   /// this model's fields.
-  ModelBasicDeviceInfo mergeWith(BaseModel? other, {bool deepMerge = false}) {
+  ModelBasicDeviceInfo mergeWith(
+    BaseModel? other, {
+    bool deepMerge = false,
+  }) {
     final a = toJson();
     final b = other?.toJson() ?? {};
     final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;

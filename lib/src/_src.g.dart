@@ -1,16 +1,13 @@
 //.title
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
-// Dart/Flutter (DF) Packages by dev-cetera.com & contributors. The use of this
-// source code is governed by an MIT-style license described in the LICENSE
-// file located in this project's root directory.
-//
-// See: https://opensource.org/license/mit
+// GENERATED - DO NOT MODIFY BY HAND
+// See: https://github.com/dev-cetera/df_generate_dart_indexes
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
-/// A package that provides a method for Flutter WASM applications to retrieve basic device information.
-library;
-
-export 'src/_src.g.dart';
+export './data_models/model_js_screen/model_js_screen.dart';
+export './data_models/model_basic_device_info/model_basic_device_info.dart';
+export './data_models/model_js_navigator/model_js_navigator.dart';
+export './get_basic_device_info/get_basic_device_info.dart';
