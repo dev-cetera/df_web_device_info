@@ -4,7 +4,7 @@
 Dart & Flutter Packages by dev-cetera.com & contributors.
 
 [![pub](https://img.shields.io/pub/v/df_web_device_info.svg)](https://pub.dev/packages/df_web_device_info)
-[![tag](https://img.shields.io/badge/tag-v0.3.12-purple)](https://github.com/dev-cetera/df_web_device_info/tree/v0.3.12)
+[![tag](https://img.shields.io/badge/tag-v0.3.13-purple)](https://github.com/dev-cetera/df_web_device_info/tree/v0.3.13)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dev-cetera/df_web_device_info/main/LICENSE)
 
 ---
@@ -49,4 +49,3 @@ If you're enjoying this package and find it valuable, consider showing your appr
 ## License
 
 This project is released under the [MIT License](https://raw.githubusercontent.com/dev-cetera/df_web_device_info/main/LICENSE). See [LICENSE](https://raw.githubusercontent.com/dev-cetera/df_web_device_info/main/LICENSE) for more information.
-
