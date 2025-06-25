@@ -19,7 +19,7 @@ This is an open-source project, and we warmly welcome contributions from everyon
 
 ---
 
-Please refer to the [API reference](https://pub.dev/documentation/df_web_device_info/) for more information.
+☝️ Please refer to the [API reference](https://pub.dev/documentation/df_web_device_info/) for more information.
 
 ---
 
@@ -46,6 +46,7 @@ If you're enjoying this package and find it valuable, consider showing your appr
 
 <a href="https://www.buymeacoffee.com/dev_cetera" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" height="40"></a>
 
-## License
+## 🧑‍⚖️ License
 
 This project is released under the [MIT License](https://raw.githubusercontent.com/dev-cetera/df_web_device_info/main/LICENSE). See [LICENSE](https://raw.githubusercontent.com/dev-cetera/df_web_device_info/main/LICENSE) for more information.
+
