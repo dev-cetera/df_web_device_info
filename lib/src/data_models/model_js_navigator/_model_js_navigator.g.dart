@@ -37,21 +37,31 @@ class ModelJsNavigator extends _ModelJsNavigator {
 
   /// Constructs a new instance of [ModelJsNavigator]
   /// from optional and required parameters.
-  const ModelJsNavigator({this.userAgent});
+  const ModelJsNavigator({
+    this.userAgent,
+  });
 
   /// Construcs a new instance of [ModelJsNavigator],
   /// forcing all parameters to be optional.
-  const ModelJsNavigator.optional({this.userAgent});
+  const ModelJsNavigator.optional({
+    this.userAgent,
+  });
 
   /// Constructs a new instance of [ModelJsNavigator],
   /// and asserts that all required parameters are not null.
-  factory ModelJsNavigator.assertRequired({String? userAgent}) {
-    return ModelJsNavigator(userAgent: userAgent);
+  factory ModelJsNavigator.assertRequired({
+    String? userAgent,
+  }) {
+    return ModelJsNavigator(
+      userAgent: userAgent,
+    );
   }
 
   /// Constructs a new instance of [ModelJsNavigator],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelJsNavigator.from(BaseModel another) {
+  factory ModelJsNavigator.from(
+    BaseModel another,
+  ) {
     try {
       return fromOrNull(another)!;
     } catch (e) {
@@ -64,13 +74,17 @@ class ModelJsNavigator extends _ModelJsNavigator {
   /// from the fields of [another] instance. Returns `null` if [another] is
   /// `null` or if the conversion fails.
   @pragma('vm:prefer-inline')
-  static ModelJsNavigator? fromOrNull(BaseModel? another) {
+  static ModelJsNavigator? fromOrNull(
+    BaseModel? another,
+  ) {
     return fromJsonOrNull(another?.toJson())!;
   }
 
   /// Constructs a new instance of [ModelJsNavigator],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelJsNavigator.of(ModelJsNavigator another) {
+  factory ModelJsNavigator.of(
+    ModelJsNavigator another,
+  ) {
     try {
       return ofOrNull(another)!;
     } catch (e) {
@@ -83,14 +97,18 @@ class ModelJsNavigator extends _ModelJsNavigator {
   /// from the fields of [another] instance. Returns `null` if [another] is
   /// `null` or if the conversion fails.
   @pragma('vm:prefer-inline')
-  static ModelJsNavigator? ofOrNull(ModelJsNavigator? other) {
+  static ModelJsNavigator? ofOrNull(
+    ModelJsNavigator? other,
+  ) {
     return fromJsonOrNull(other?.toJson());
   }
 
   /// Constructs a new instance of [ModelJsNavigator],
   /// from [jsonString], which must be a valid JSON String. Throws if the
   /// conversion fails.
-  factory ModelJsNavigator.fromJsonString(String jsonString) {
+  factory ModelJsNavigator.fromJsonString(
+    String jsonString,
+  ) {
     try {
       return fromJsonStringOrNull(jsonString)!;
     } catch (e) {
@@ -102,7 +120,9 @@ class ModelJsNavigator extends _ModelJsNavigator {
   /// Constructs a new instance of [ModelJsNavigator],
   /// from [jsonString], which must be a valid JSON String. Returns `null` if
   /// [jsonString] is `null` or if the conversion fails.
-  static ModelJsNavigator? fromJsonStringOrNull(String? jsonString) {
+  static ModelJsNavigator? fromJsonStringOrNull(
+    String? jsonString,
+  ) {
     try {
       if (jsonString!.isNotEmpty) {
         final decoded = letMapOrNull<String, dynamic>(jsonDecode(jsonString));
@@ -118,7 +138,9 @@ class ModelJsNavigator extends _ModelJsNavigator {
   /// Constructs a new instance of [ModelJsNavigator],
   /// from [json], which must be a valid JSON object. Throws if the conversion
   /// fails.
-  factory ModelJsNavigator.fromJson(Map<String, dynamic>? json) {
+  factory ModelJsNavigator.fromJson(
+    Map<String, dynamic>? json,
+  ) {
     try {
       return fromJsonOrNull(json)!;
     } catch (e) {
@@ -130,10 +152,14 @@ class ModelJsNavigator extends _ModelJsNavigator {
   /// Constructs a new instance of [ModelJsNavigator],
   /// from [json], which must be a valid JSON object. Returns `null` if
   /// [json] is `null` or if the conversion fails.
-  static ModelJsNavigator? fromJsonOrNull(Map<String, dynamic>? json) {
+  static ModelJsNavigator? fromJsonOrNull(
+    Map<String, dynamic>? json,
+  ) {
     try {
       final userAgent = json?['userAgent']?.toString().trim().nullIfEmpty;
-      return ModelJsNavigator(userAgent: userAgent);
+      return ModelJsNavigator(
+        userAgent: userAgent,
+      );
     } catch (e) {
       return null;
     }
@@ -142,7 +168,9 @@ class ModelJsNavigator extends _ModelJsNavigator {
   /// Constructs a new instance of [ModelJsNavigator],
   /// from the query parameters of [uri]. Throws if the conversion
   /// fails.
-  factory ModelJsNavigator.fromUri(Uri? uri) {
+  factory ModelJsNavigator.fromUri(
+    Uri? uri,
+  ) {
     try {
       return fromUriOrNull(uri)!;
     } catch (e) {
@@ -154,7 +182,9 @@ class ModelJsNavigator extends _ModelJsNavigator {
   /// Constructs a new instance of [ModelJsNavigator],
   /// from the query parameters of [uri]. Returns `null` if [uri] is `null` or
   /// if the conversion fails.
-  static ModelJsNavigator? fromUriOrNull(Uri? uri) {
+  static ModelJsNavigator? fromUriOrNull(
+    Uri? uri,
+  ) {
     try {
       if (uri != null && uri.path == CLASS_NAME) {
         return ModelJsNavigator.fromJson(uri.queryParameters);
@@ -167,10 +197,14 @@ class ModelJsNavigator extends _ModelJsNavigator {
   }
 
   @override
-  Map<String, dynamic> toJson({bool includeNulls = false}) {
+  Map<String, dynamic> toJson({
+    bool includeNulls = false,
+  }) {
     try {
       final userAgent0 = userAgent?.trim().nullIfEmpty;
-      final withNulls = {'userAgent': userAgent0};
+      final withNulls = {
+        'userAgent': userAgent0,
+      };
       return includeNulls ? withNulls : withNulls.nonNulls;
     } catch (e) {
       assert(false, '$ModelJsNavigator.toJson: $e');
@@ -195,7 +229,10 @@ abstract final class ModelJsNavigatorFieldNames {
 extension ModelJsNavigatorX on ModelJsNavigator {
   /// Creates a copy of this instance, merging another model's fields into
   /// this model's fields.
-  ModelJsNavigator mergeWith(BaseModel? other, {bool deepMerge = false}) {
+  ModelJsNavigator mergeWith(
+    BaseModel? other, {
+    bool deepMerge = false,
+  }) {
     final a = toJson();
     final b = other?.toJson() ?? {};
     final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
@@ -203,14 +240,18 @@ extension ModelJsNavigatorX on ModelJsNavigator {
   }
 
   /// Creates a copy of this instance, replacing the specified fields.
-  ModelJsNavigator copyWith({String? userAgent}) {
+  ModelJsNavigator copyWith({
+    String? userAgent,
+  }) {
     return ModelJsNavigator.assertRequired(
       userAgent: userAgent ?? this.userAgent,
     );
   }
 
   /// Creates a copy of this instance, removing the specified fields.
-  ModelJsNavigator copyWithout({bool userAgent = true}) {
+  ModelJsNavigator copyWithout({
+    bool userAgent = true,
+  }) {
     return ModelJsNavigator.assertRequired(
       userAgent: userAgent ? this.userAgent : null,
     );
